@@ -15,10 +15,24 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        // MVP pattern
         val moviePresenter = MoviePresenter(
             view = object : Movieview {
                 override fun onGetMovieTitle(title: String?) {
                     binding.textView.text = title
+                }
+
+                override fun onGetMovieReleaseData(releaseDate: String?) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onGetMovieOverview(overview: String?) {
+                    TODO("Not yet implemented")
+                }
+
+                override fun onGetMovieId(id: Int?) {
+                    TODO("Not yet implemented")
                 }
             }
         )
